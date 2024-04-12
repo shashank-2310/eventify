@@ -4,6 +4,8 @@ import { twMerge } from 'tailwind-merge'
 import qs from 'query-string'
 
 import { UrlQueryParams, RemoveUrlQueryParams } from '@/types'
+import { auth } from '@clerk/nextjs'
+import { IEvent } from './database/models/event.model'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
