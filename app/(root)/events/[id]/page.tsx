@@ -15,7 +15,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
     return (
         <>
-            <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
+            <section className="flex items-center justify-center bg-primary-50 bg-dotted-pattern bg-contain">
                 <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl">
                     <Image
                         src={event.imageUrl}
@@ -104,8 +104,8 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
                     emptyStateSubtext="Come back later for more events!"
                     collectionType="All_Events"
                     limit={6}
-                    page={1}
-                    totalPages={2}
+                    page={searchParams.page as string}
+                    totalPages={relatedEvents?.totalPages}
                 />
             </section>
         </>

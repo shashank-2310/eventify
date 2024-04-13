@@ -52,7 +52,6 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
     const router = useRouter()
 
     const [files, setFiles] = useState<File[]>([]);
-    const [value, onChange] = useState<Value>(new Date());
 
     const form = useForm<z.infer<typeof eventFormSchema>>({
         resolver: zodResolver(eventFormSchema),
